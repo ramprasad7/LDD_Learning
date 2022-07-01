@@ -42,12 +42,12 @@ void initialize()
 	int x,y;
 	
 	int m;
-	scanf("%d\n",&m);
+	scanf("%d",&m);
 	
 	for(i=1;i<=m;i++)
 	{
 	    
-		scanf("%s %d %d\n",a,&heap[i].id,&heap[i].period);
+		scanf("%s %d %d",a,&heap[i].id,&heap[i].period);
 		heap[i].time = heap[i].period;
 		heapup(i); 
 		total++;
@@ -100,7 +100,7 @@ int main()
 	
 	initialize();
 	int k;
-    scanf("%d\n",&k);
+    scanf("%d",&k);
 	
 	for(j=0;j<k;j++)
 	{
