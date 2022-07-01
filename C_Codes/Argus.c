@@ -108,4 +108,5 @@ int main()
 		n = heapdown();
 		heapup(n);
 	}
+	return 0;
 }
