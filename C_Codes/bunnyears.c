@@ -9,7 +9,7 @@ int main(){
 	printf("Enter number of bunnies\n");
 	scanf("%d",&n);
 	int result =  bunnyears(n);
-	printf("number of bunny ears %d\n",result);
+	printf("Total number of bunny ears %d\n",result);
 	return 0;
 }
 	
