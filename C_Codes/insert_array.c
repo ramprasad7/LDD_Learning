@@ -21,7 +21,7 @@ int main(){
         printf("Enter the value to insert\n");
         scanf("%d",&val);
          loc--;
-         for(i=n;i<=loc-1;i--){
+         for(i=n;i>=loc-1;i--){
             *(a+i+1)  = *(a+i);
          }
          *(a+loc) = val;
