@@ -18,13 +18,15 @@ void test_sigcont_handler(int sig){
 }
 
 int main(int argc,char** argv){
-     struct sigaction sa;
+     struct sigaction sa1;
+     struct sigaction sa2;
     //sa.sa_handler = &test_sigtstp_handler;
-    sa.sa_handler = &test_sigcont_handler;
-    
-    sa.sa_flags = SA_RESTART;
-   // sigaction(SIGTSTP,&sa,NULL);
-    sigaction(SIGCONT,&sa,NULL);
+    sa1.sa_handler = &test_sigtstp_handler;
+    sa2.sa_handler = &test_sigcont_handler;
+    sa1.sa_flags = SA_RESTART;
+    sa2.sa_flags = SA_RESTART;
+   sigaction(SIGTSTP,&sa1,NULL);
+   // sigaction(SIGCONT,&sa,NULL);
     
     
     //signal(SIGTSTP,&test_handler); // this is not reliable

@@ -6,7 +6,7 @@
 #include<string.h>
 
 
-int main(int argc,char** argv){
+int main(int argc,char* argv[]){
     int fd[2];
     if(pipe(fd) < 0){
         return 1;
