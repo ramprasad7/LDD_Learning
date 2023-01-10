@@ -40,28 +40,33 @@ void display(Node* head){
     printf("NULL\n");
 }
 
-void delete(Node* head, int pos){
-    Node* temp = head->next;
+void delete(Node** head, int pos){
+    Node* temp;
+
+    if(*head == NULL){
+        return;
+    }
 
     if(pos == 1){
-        head->data = temp->data;
-        head->next = temp->next;
+        temp = *head;
+        *head = temp->next;
+        temp->next = NULL;
         free(temp);
+        printf("Node has been deleted\n");
         return;
     }
 
     int i;
     pos--;
-
+    temp = *head;
     for(i=1;i<pos;i++){
-        head = head->next;
+        temp = temp->next;
     }
-    Node* del = head->next;
-    printf("Node has been deleted: %d\n",head->next->data);
-    head->next = del->next;
-    del = NULL;
+    Node* del = temp->next;
+    temp->next = del->next;
+    del->next = NULL;
     free(del);
-
+    printf("Node has been deleted\n");
 }
 
  
@@ -73,7 +78,6 @@ int main(int argc,char *argv[]){
     while(1){
         printf("Enter choice:\n1.Insert.\n2.Display.\n3.Delete\n.4.Exit.\n");
         scanf("%d",&choice);
-
         switch(choice){
             case 1:{
                 int data;
